@@ -1,0 +1,29 @@
+header {
+  box-shadow: 0 2px 5px #dbdbdb;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+}
+
+header > img {
+  width: 90px;
+}
+
+header > div {
+  cursor: pointer;
+}
+
+.wrapper-right-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrapper-right-header div:first-child {
+  padding-right: 10px;
+}
+
+@media (min-width: 1200px) {
+  header > img {
+    width: 140px;
+  }
+}
