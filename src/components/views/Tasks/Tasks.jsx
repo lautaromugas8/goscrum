@@ -29,7 +29,7 @@ export const Tasks = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getTasks(tasksFromWho === "ME" ? "/me" : ""));
+    dispatch(getTasks(tasksFromWho === "ME" ? "me" : ""));
   }, [tasksFromWho, dispatch]);
 
   const { loading, tasks, error } = useSelector((state) => state.tasksReducer);
@@ -53,7 +53,7 @@ export const Tasks = () => {
   }
 
   const renderAllCards = () => {
-    renderList?.map((data) => (
+    return renderList?.map((data) => (
       <Card
         key={data._id}
         data={data}
@@ -64,7 +64,7 @@ export const Tasks = () => {
   };
 
   const renderColumnCards = (status) => {
-    renderList
+    return renderList
       ?.filter((data) => data.status === status)
       .map((data) => (
         <Card

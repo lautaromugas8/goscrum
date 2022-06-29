@@ -53,7 +53,7 @@ export const Register = () => {
     },
     validationSchema,
     onSubmit: () => {
-      const teamID = values.teamID ?? uuidv4();
+      const teamID = !values.teamID ? uuidv4() : values.teamID;
 
       fetch(`${REACT_APP_API_ENDPOINT}auth/register`, {
         method: "POST",
