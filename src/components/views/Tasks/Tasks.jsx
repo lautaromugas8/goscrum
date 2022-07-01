@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import debounce from "lodash.debounce";
-import "react-loading-skeleton/dist/skeleton.css";
 import "./Tasks.styles.css";
+import "react-loading-skeleton/dist/skeleton.css";
 import {
   getTasks,
   deleteTask,
@@ -144,16 +144,19 @@ export const Tasks = () => {
             !renderList?.length ? (
               <div>No hay tareas creadas</div>
             ) : loading ? (
-              <Skeleton />
+              <Skeleton count={5} height={180} />
             ) : (
               <div className="list phone">{renderAllCards()}</div>
             )
           ) : (
-            <div className="list_group">
+            <div
+              className="list_group"
+              style={{ display: loading ? "block" : "flex" }}
+            >
               {!renderList?.length ? (
                 <div>No hay tareas creadas</div>
               ) : loading ? (
-                <Skeleton />
+                <Skeleton count={5} height={180} />
               ) : (
                 <>
                   <div className="list">

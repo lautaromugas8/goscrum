@@ -79,6 +79,7 @@
   background-color: var(--global-primary-color);
   border-color: var(--global-primary-color);
   color: white;
+  cursor: pointer;
 }
 
 #tasks .card button.finished {
@@ -143,7 +144,6 @@
   margin-bottom: 0.2rem;
   outline: 0;
   padding: 0.745rem 0.745rem;
-  position: relative;
   width: 100%;
   box-sizing: border-box;
 }
