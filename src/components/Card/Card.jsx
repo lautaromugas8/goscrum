@@ -19,8 +19,8 @@ export const Card = ({
   const datetime = new Date(createdAt).toLocaleString() + " hs.";
 
   const limitString = (string) => {
-    if (string.length > 370) {
-      return { string: string.slice(0.367).concat("..."), addButton: true };
+    if (string.length > 170) {
+      return { string: string.slice(0, 167).concat("..."), addButton: true };
     }
     return { string, addButton: false };
   };
@@ -47,13 +47,13 @@ export const Card = ({
       {showMore && (
         <>
           <p>{description}</p>
-          <button type="button" onChange={() => setShowMore(false)}>
+          <button type="button" onClick={() => setShowMore(false)}>
             Ver menos
           </button>
         </>
       )}
       {!showMore && limitString(description).addButton && (
-        <button type="button" onChange={() => setShowMore(true)}>
+        <button type="button" onClick={() => setShowMore(true)}>
           Ver más
         </button>
       )}
