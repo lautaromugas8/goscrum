@@ -109,6 +109,7 @@ export const Tasks = () => {
               <RadioGroup
                 row
                 aria-labelledby="demo-row-radio-buttons-group-label"
+                defaultValue="ALL"
                 onChange={(event) => {
                   setTasksFromWho(event.currentTarget.value);
                 }}
@@ -144,7 +145,7 @@ export const Tasks = () => {
             !renderList?.length ? (
               <div>No hay tareas creadas</div>
             ) : loading ? (
-              <Skeleton count={5} height={180} />
+              <Skeleton height={180} />
             ) : (
               <div className="list phone">{renderAllCards()}</div>
             )
@@ -156,7 +157,7 @@ export const Tasks = () => {
               {!renderList?.length ? (
                 <div>No hay tareas creadas</div>
               ) : loading ? (
-                <Skeleton count={5} height={180} />
+                <Skeleton height={180} />
               ) : (
                 <>
                   <div className="list">
