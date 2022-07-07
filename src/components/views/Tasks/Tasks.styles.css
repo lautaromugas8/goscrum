@@ -6,7 +6,7 @@
 
 #tasks .wrapper_list {
   background-color: #fafafa;
-  border-radius: var(--globar-border-radius);
+  border-radius: var(--globar-radius);
   height: calc(100vh - 100px);
   padding: 10px;
   box-shadow: 0 2px 5px #dbdbdb;
