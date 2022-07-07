@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Logo from "../../assets/images/GoScrum.png";
 import "./Header.styles.css";
 
 export const Header = () => {
@@ -15,14 +16,14 @@ export const Header = () => {
 
   return (
     <header>
-      <img src="/img/GoScrum.png" alt="Logo" />
+      <img src={Logo} alt="Logo" />
       <div className="wrapper-right-header">
         <div>
           <button onClick={() => navigate("/donate", { replace: true })}>
             Donar
           </button>
         </div>
-        <div className="black">Tareas creadas: {tasks?.length}</div>
+        <div className="black">Tareas creadas: {tasks ? tasks.length : 0}</div>
         <div className="black">{localStorage.getItem("userName")}</div>
         <div onClick={handleLogout}>X</div>
       </div>
